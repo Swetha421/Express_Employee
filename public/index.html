@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <a href="/add"> <button type="submit" style="float: right;margin-top: 0px;">Add Deatils</button></a>
+    <div style="text-align: center;margin-top: 50px;">
+        <h1 style="margin-top: 20px;">Employee List</h1> <hr>
+     <input type="text" placeholder="Enter ID" id="e1"><br><br>
+       <button>Search</button>
+
+</div>
+  </form>
+  <script>
+    function Search(){
+        const ID=document.getElementById('e1').value;
+
+        const first="/search"/$ID;
+        window.location.href=first;
+
+    }
+  </script>
+</body>
+</html>
