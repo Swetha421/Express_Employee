@@ -8,11 +8,14 @@
 <body>
     <div style="text-align: center;margin-top: 50px;">
     <h1 style="margin-top: 20px;">Employee Details</h1> <hr>
-    Employee ID <input type="text"><br><br>
-   Name<input type="text"><br><br>
-   Designation<input type="text"><br>
-   <button style="margin-top: 50px;">Add</button>
+    <form action="/adddetail" method="post">
+    Employee ID <input type="text" name="ID" id="ID"><br><br>
+   Name<input type="text" name="empname" id="empname"><br><br>
+   Designation<input type="text" name="role" id="role"><br>
+  <button type="submit" style="margin-top: 50px;">Add</button>
+</form>
    
    </div>
+   
 </body>
 </html>

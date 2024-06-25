@@ -4,17 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <a href="/"><button class="float-right mb-0 bg-blue-500">back</button></a>
     <h1 style="margin-top: 20px;">Employee Details</h1> <hr>
-    <table>
+    <table class="w-full table-auto border-collapse text-center">
         <thead>
-        <tr >
-            <th >Employee ID :</th>
-            <th >Employee Name :</th>
-            <th>Employee Roll :</th>
-        </tr>
+            <tr>
+                <th class="border px-4 py-2">ID</th>
+                <th class="border px-4 py-2">Name</th>
+                <th class="border px-4 py-2">Role</th>
+                
+            </tr>
         </thead>
+        <tbody id="empTable">
+            <!-- Tasks will be dynamically loaded here -->
+        </tbody>
     </table>
+    <script>
+       async function view(){
+        try{
+            const deta=await fetch('/alldata')
+            const newdata= await deta.json()
+            const empdata=document.getElementById('empTable')
+            empdata.innerHTML='';
+            newdata.forEach(emp => {
+                empdata.innerHTML+=`
+                <tr>
+                    <td>${emp.ID}</td>
+                    <td>${emp.empname}</td>
+                    <td>${emp.role}</td>
+                    
+                    
+                    </tr>`
+
+                
+            });
+        }
+         catch(error){
+            console.log('error')
+         }   
+        }
+        document.addEventListener('DOMContentLoaded',view);
+        
+    </script>
 </body>
 </html>
